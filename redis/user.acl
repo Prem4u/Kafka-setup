@@ -1,0 +1,4 @@
+user default on >defaultpassword
+user prem_cluster on >Gan83 +@all
+user prem_01 on >Anj83 +@all ~*
+user test on >readonly123 +@read ~*

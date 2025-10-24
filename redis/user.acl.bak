@@ -1,0 +1,21 @@
+
+# ----------------------------------------------------- #
+#       ACL File: /etc/redis/users.acl                  #
+# ----------------------------------------------------- #
+
+# The special 'default' user is still supported.
+# To disable it completely, use 'user default off'.
+# user default on >defaultpassword
+
+# A highly-privileged user for cluster-internal communication.
+# This user is used by replicas to authenticate with masters.
+# We give it access to all commands and all keys.
+user prem_cluster on >Gan83 +@all
+
+# A user for your application or UI Streaming Service.
+# We give it permission to access all keys (`~*`) and execute all commands (`+@all`).
+# In a real-world scenario, you would tighten these permissions.
+user prem_01 on >Anj83 +@all ~*
+
+# An example read-only user for monitoring dashboards.
+user monitor-user on >man83 +@readonly ~stats:*
